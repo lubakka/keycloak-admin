@@ -26,6 +26,12 @@
         "phpunit/phpunit": "^12.0",
         "phpstan/phpstan": "^2.1"
     },
+    "config": {
+        "sort-packages": true
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
     "scripts": {
         "test": "php vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests",
         "sca": "php vendor/bin/phpstan analyse -c phpstan.neon",
