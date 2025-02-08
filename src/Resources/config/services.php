@@ -10,5 +10,6 @@ return function (ContainerConfigurator $container) {
 
     $services
         ->set('keycloak_admin_manager', KeycloakAdminManager::class)
+        ->alias(KeycloakAdminManager::class, 'keycloak_admin_manager')
     ;
 };
