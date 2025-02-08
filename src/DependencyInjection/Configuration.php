@@ -1,9 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Symfony\Bundle\MonologBundle\DependencyInjection;
+namespace Lubakka\KeycloakAdmin\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 class Configuration implements ConfigurationInterface
 {
@@ -11,8 +12,8 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('keycloak_admin');
 
-        $treeBuilder->getRootNode()
-            ->children()
+        $rootNode = $treeBuilder->getRootNode();
+        $rootNode->children()
                 ->booleanNode('option1')->defaultTrue()->end()
                 ->scalarNode('option2')->defaultValue('default_value')->end()
             ->end();
